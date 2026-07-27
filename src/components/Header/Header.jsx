@@ -1,13 +1,49 @@
  /* ===== Header 导航栏组件 =====
-  * 固定顶部导航栏，含品牌 Logo、搜索框、菜单项
-  * 每个导航项点击后通过 scrollTo 跳转到对应 section
+  * 基于 scroll + offsetTop 对比确定当前高亮 section
+  * 点击立即高亮，不依赖 IntersectionObserver 延迟
   */
+ import { useState, useEffect, useCallback, useRef } from "react"
  import { NAV } from "../../data/constants"
  
- /** 导航项 → section id 映射 */
  const SECTION_MAP = { "首页": "hero", "模板类型": "types", "作品": "works", "定制": "contact" }
+ const SECTION_IDS = Object.values(SECTION_MAP)
  
  export default function Header({ showNotice, scrollTo }) {
+   const [activeItem, setActiveItem] = useState("首页")
+   const ticking = useRef(false)
+ 
+   /* 滚动时找最接近视口顶部（+100px 头部偏移）的 section */
+   useEffect(() => {
+     const calc = () => {
+       const scrollY = window.scrollY + 100
+       let best = { id: "", dist: Infinity }
+       for (const id of SECTION_IDS) {
+         const el = document.getElementById(id)
+         if (!el) continue
+         const dist = Math.abs(el.offsetTop - scrollY)
+         if (dist < best.dist) { best = { id, dist } }
+       }
+       if (best.id) {
+         const item = Object.keys(SECTION_MAP).find(k => SECTION_MAP[k] === best.id)
+         if (item && item !== activeItem) setActiveItem(item)
+       }
+     }
+     const onScroll = () => {
+       if (!ticking.current) {
+         requestAnimationFrame(() => { calc(); ticking.current = false })
+         ticking.current = true
+       }
+     }
+     window.addEventListener("scroll", onScroll, { passive: true })
+     calc()
+     return () => window.removeEventListener("scroll", onScroll)
+   }, [activeItem])
+ 
+   const handleNavClick = useCallback((item) => {
+     setActiveItem(item)
+     scrollTo(SECTION_MAP[item])
+   }, [scrollTo])
+ 
    return (
      <header className="header">
        <div className="header-inner">
@@ -26,11 +62,15 @@
            <span className="search-icon">⌕</span>
          </label>
          <nav className="nav">
-           {NAV.map((item, i) => (
+           {NAV.map((item) => (
              <button
                key={item}
-               className={"nav-btn" + (i === 0 ? " active" : "") + (item === "定制" ? " nav-cta-orange" : "")}
-               onClick={() => scrollTo(SECTION_MAP[item])}
+               className={
+                 item === "定制"
+                   ? "nav-cta-orange"
+                   : "nav-btn" + (activeItem === item ? " active" : "")
+               }
+               onClick={() => handleNavClick(item)}
              >
                {item}
              </button>
