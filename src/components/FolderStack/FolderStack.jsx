@@ -10,7 +10,7 @@
      <div className="folder-stack" onMouseEnter={stop} onMouseLeave={start}>
        {FOLDERS.map((f, i) => {
          /* 计算相对层级位置：0 为顶层，4 为底层 */
-         const relIdx = (i - topIdx + 5) % 5
+         const relIdx = (i - topIdx + 4) % 4
          return (
            <div
              key={i}
