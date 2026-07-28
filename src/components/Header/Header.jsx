@@ -5,14 +5,13 @@
  import { useState, useEffect, useCallback, useRef } from "react"
  import { NAV } from "../../data/constants"
  
- const SECTION_MAP = { "首页": "hero", "模板类型": "types", "作品": "works", "定制": "contact" }
+ const SECTION_MAP = { "首页": "hero", "模板类型": "types", "风格": "themes", "作品": "works", "定制": "contact" }
  const SECTION_IDS = Object.values(SECTION_MAP)
  
  export default function Header({ showNotice, scrollTo }) {
    const [activeItem, setActiveItem] = useState("首页")
    const ticking = useRef(false)
  
-   /* 滚动时找最接近视口顶部（+100px 头部偏移）的 section */
    useEffect(() => {
      const calc = () => {
        const scrollY = window.scrollY + 100
