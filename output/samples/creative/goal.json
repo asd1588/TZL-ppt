@@ -1,0 +1,205 @@
+{
+  "title": "新品上市推广方案",
+  "goal": "面向创业团队和产品经理的全案营销策划与新品上市推广方案",
+  "themePack": "theme01",
+  "pageCount": 5,
+  "slides": [
+    {
+      "layout": "theme01_page002",
+      "props": {
+        "enKicker": "PRODUCT LAUNCH",
+        "titleTop": "????",
+        "titleBottom": "????",
+        "subtitle": "?????????????",
+        "pills": [
+          "????",
+          "????",
+          "????"
+        ],
+        "meta": "TZL????",
+        "footnote": "CONFIDENTIAL",
+        "pillCount": 3
+      }
+    },
+    {
+      "layout": "theme01_page083",
+      "props": {
+        "kicker": "????",
+        "title": "??????",
+        "en": "CORE STRATEGIES",
+        "cn": "???????????",
+        "takeaways": [
+          {
+            "tag": "??",
+            "en": "POSITIONING",
+            "text": "????????????"
+          },
+          {
+            "tag": "??",
+            "en": "CONTENT",
+            "text": "??????????"
+          },
+          {
+            "tag": "??",
+            "en": "CHANNELS",
+            "text": "?????????"
+          }
+        ],
+        "summary": "???????????????",
+        "bandLabel": "????",
+        "caption": "???????????",
+        "takeawayCount": 3
+      }
+    },
+    {
+      "layout": "theme01_page009",
+      "props": {
+        "kicker": "????",
+        "title": "?????",
+        "en": "ROADMAP",
+        "cn": "????????????",
+        "chapters": [
+          {
+            "no": "01",
+            "label": "????",
+            "en": "RESEARCH",
+            "desc": "???????????"
+          },
+          {
+            "no": "02",
+            "label": "????",
+            "en": "STRATEGY",
+            "desc": "???????????"
+          },
+          {
+            "no": "03",
+            "label": "????",
+            "en": "CREATE",
+            "desc": "?????????"
+          },
+          {
+            "no": "04",
+            "label": "????",
+            "en": "REVIEW",
+            "desc": "?????????"
+          }
+        ],
+        "caption": "????????",
+        "chapterCount": 4
+      }
+    },
+    {
+      "layout": "theme01_page053",
+      "props": {
+        "kicker": "????",
+        "title": "?????",
+        "en": "BUDGET PLAN",
+        "cn": "2026??????????",
+        "cornerLabel": "??:??",
+        "hotBadgeLabel": "??",
+        "colLabels": [
+          "??",
+          "??",
+          "??",
+          "ROI"
+        ],
+        "rows": [
+          {
+            "label": "????",
+            "cells": [
+              120,
+              30,
+              350,
+              1
+            ]
+          },
+          {
+            "label": "????",
+            "cells": [
+              100,
+              25,
+              280,
+              2
+            ]
+          },
+          {
+            "label": "????",
+            "cells": [
+              80,
+              20,
+              210,
+              3
+            ]
+          },
+          {
+            "label": "????",
+            "cells": [
+              60,
+              15,
+              140,
+              4
+            ]
+          }
+        ],
+        "unit": "??",
+        "totalsLabel": "??",
+        "lowLabel": "??",
+        "highLabel": "??",
+        "caption": "???:400??",
+        "rowCount": 4
+      }
+    },
+    {
+      "layout": "theme01_page012",
+      "props": {
+        "kicker": "????",
+        "title": "??????",
+        "en": "QUARTERLY PLAN",
+        "quarters": [
+          {
+            "label": "Q1",
+            "amount": 80,
+            "deals": 5,
+            "note": "品牌定位与VI设计"
+          },
+          {
+            "label": "Q2",
+            "amount": 120,
+            "deals": 8,
+            "note": "社交媒体内容矩阵"
+          },
+          {
+            "label": "Q3",
+            "amount": 100,
+            "deals": 6,
+            "note": "多平台广告投放"
+          },
+          {
+            "label": "Q4",
+            "amount": 100,
+            "deals": 7,
+            "note": "数据复盘与优化"
+          }
+        ],
+        "unit": "??",
+        "summary": {
+          "total": "400",
+          "totalUnit": "??",
+          "en": "TOTAL BUDGET",
+          "rows": [
+            {
+              "k": "??ROI",
+              "v": "300%"
+            },
+            {
+              "k": "????",
+              "v": "500?"
+            }
+          ],
+          "tag": "????"
+        },
+        "caption": "??????400??"
+      }
+    }
+  ]
+}

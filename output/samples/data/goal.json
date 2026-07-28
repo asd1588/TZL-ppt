@@ -1,0 +1,173 @@
+{
+  "title": "季度数据报告总览",
+  "goal": "面向管理层和投资团队的季度数据报告，涵盖核心指标、市场趋势与战略建议",
+  "themePack": "theme05",
+  "pageCount": 5,
+  "slides": [
+    {
+      "layout": "theme05_page002",
+      "props": {
+        "copy": {
+          "top": "?????????",
+          "number": "01",
+          "caption": "2026?????",
+          "titleTop": "??????",
+          "titleBottom": "?????",
+          "banner": "???????",
+          "bannerEn": "DATA REPORT Q2 2026"
+        }
+      }
+    },
+    {
+      "layout": "theme05_page077",
+      "props": {
+        "copy": {
+          "eyebrow": "????",
+          "title": "??????",
+          "sheet": "????",
+          "lead": "??????????????????",
+          "stageCap": "???",
+          "stageUnit": "%",
+          "stages": [
+            {
+              "k": "??",
+              "en": "Impressions",
+              "v": 100
+            },
+            {
+              "k": "??",
+              "en": "Click",
+              "v": 35
+            },
+            {
+              "k": "??",
+              "en": "Conversion",
+              "v": 12
+            },
+            {
+              "k": "??",
+              "en": "Retention",
+              "v": 8
+            }
+          ],
+          "cardTitle": "????",
+          "cardEn": "KEY INSIGHTS",
+          "cardLead": "?????????35%",
+          "kpis": [
+            [
+              "??",
+              "1.2?",
+              "??"
+            ],
+            [
+              "??",
+              "85?",
+              "??"
+            ],
+            [
+              "???",
+              "?1,580",
+              "??"
+            ]
+          ],
+          "conclusion": "???????????????"
+        },
+        "stageCount": 4
+      }
+    },
+    {
+      "layout": "theme05_page007",
+      "props": {
+        "copy": {
+          "title": "????",
+          "note": [
+            "????",
+            "????"
+          ],
+          "cardFootLabel": "??",
+          "focusBadgeLabel": "??",
+          "chapters": [
+            {
+              "zh": "????",
+              "en": "OVERVIEW",
+              "code": "01"
+            },
+            {
+              "zh": "????",
+              "en": "MARKET",
+              "code": "02"
+            },
+            {
+              "zh": "????",
+              "en": "USERS",
+              "code": "03"
+            },
+            {
+              "zh": "????",
+              "en": "STRATEGY",
+              "code": "04"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "layout": "theme05_page053",
+      "props": {
+        "copy": {
+          "brand": "????",
+          "barMeta": "???",
+          "eyebrow": "????",
+          "num": "04",
+          "title": "????",
+          "sub": "?????????",
+          "sheet": "04/05",
+          "keywords": [
+            "??",
+            "??",
+            "??",
+            "??"
+          ]
+        },
+        "keywordCount": 4
+      }
+    },
+    {
+      "layout": "theme05_page094",
+      "props": {
+        "copy": {
+          "brand": "????",
+          "meta": [
+            "????",
+            "??????"
+          ],
+          "eyebrow": "????",
+          "display": "TZL",
+          "titleRecap": "?????????",
+          "closing": "?????????TZL????",
+          "panelHead": "????",
+          "specs": [
+            {
+              "k": "????",
+              "v": "2026Q2"
+            },
+            {
+              "k": "????",
+              "v": "????"
+            },
+            {
+              "k": "????",
+              "v": "TZL???"
+            },
+            {
+              "k": "????",
+              "v": "v2.3"
+            }
+          ],
+          "sheet": "05/05"
+        },
+        "specRowCount": 4
+      }
+    }
+  ]
+}

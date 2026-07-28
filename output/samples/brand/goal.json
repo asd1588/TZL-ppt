@@ -1,0 +1,172 @@
+{
+  "title": "高端品牌战略提案",
+  "goal": "面向高端品牌客户的品牌战略提案与全案策划方案",
+  "themePack": "theme08",
+  "pageCount": 5,
+  "slides": [
+    {
+      "layout": "theme08_page002",
+      "props": {
+        "kicker": "品牌提案·黑金系列",
+        "headlineL1Pre": "高端品牌",
+        "headlineHl1": "战略提案",
+        "headlineL2Pre": "全案策划",
+        "headlineHl2": "品牌升级",
+        "subtitle": "面向未来五年的品牌升级路径与全案策划方案",
+        "tags": [
+          "品牌定位",
+          "全案策划"
+        ],
+        "handNoteTL": "TZL设计",
+        "handNoteTR": "2026",
+        "handNoteBL": "CONFIDENTIAL",
+        "indexNum": "01",
+        "indexTotal": "05"
+      }
+    },
+    {
+      "layout": "theme08_page021",
+      "props": {
+        "eyebrow": "核心数据",
+        "headline": "品牌价值峰值",
+        "subheadline": "关键指标一览",
+        "summary": "通过深度市场调研与消费者洞察，品牌核心价值实现显著跃升。",
+        "badge": "突破性增长",
+        "hero": {
+          "label": "品牌价值",
+          "value": "86%",
+          "unit": "提升率"
+        },
+        "metrics": [
+          {
+            "k": "认知度",
+            "v": "92%",
+            "unit": "市场"
+          },
+          {
+            "k": "偏好度",
+            "v": "78%",
+            "unit": "人群"
+          },
+          {
+            "k": "忠诚度",
+            "v": "65%",
+            "unit": "复购"
+          }
+        ],
+        "closingLine": "数据截至2026年第二季度",
+        "metricCount": 3,
+        "mediaCount": 0
+      }
+    },
+    {
+      "layout": "theme08_page064",
+      "props": {
+        "eyebrow": "案例研究",
+        "kicker": "品牌升级实践",
+        "headline": "奢侈品牌重塑",
+        "company": "LUXURY X",
+        "tag": "全案策划",
+        "caption": "从品牌战略定位到视觉体系全面升级，12个月内实现品牌认知度提升45%。",
+        "closingLine": "战略升级合作品牌",
+        "stageCount": 3,
+        "metricCount": 2,
+        "mediaCount": 0
+      }
+    },
+    {
+      "layout": "theme08_page081",
+      "props": {
+        "eyebrow": "执行路线",
+        "headline": "12月实施计划",
+        "subheadline": "品牌升级路线图",
+        "summary": "系统化推进品牌战略落地，分阶段实现品牌价值跃迁。",
+        "nodes": [
+          {
+            "phase": "Q1",
+            "title": "品牌诊断",
+            "desc": "深度调研与品牌审计",
+            "value": "1-3月",
+            "unit": ""
+          },
+          {
+            "phase": "Q2",
+            "title": "战略定位",
+            "desc": "品牌定位与差异化策略",
+            "value": "4-6月",
+            "unit": ""
+          },
+          {
+            "phase": "Q3",
+            "title": "视觉升级",
+            "desc": "视觉体系全面重塑",
+            "value": "7-9月",
+            "unit": ""
+          },
+          {
+            "phase": "Q4",
+            "title": "落地推广",
+            "desc": "传播战役与渠道升级",
+            "value": "10-12月",
+            "unit": ""
+          }
+        ],
+        "closingLine": "TZL设计全程保驾护航",
+        "keyNodeBadgeLabel": "重点关注",
+        "nodeCount": 4
+      }
+    },
+    {
+      "layout": "theme08_page055",
+      "props": {
+        "eyebrow": "成果量化",
+        "kicker": "品牌升级成效",
+        "headline": "十倍增长引擎",
+        "bigNumber": "320%",
+        "bigUnit": "ROI",
+        "caption": "通过系统化品牌升级方案，客户品牌资产实现跨越式增长。",
+        "factorsTitle": "增长要素",
+        "regionStickerLabel": "核心指标",
+        "regionStickerSub": "同比增长",
+        "factors": [
+          {
+            "label": "品牌认知",
+            "note": "提升92%"
+          },
+          {
+            "label": "市场份额",
+            "note": "增长35%"
+          },
+          {
+            "label": "客户忠诚",
+            "note": "提高28%"
+          },
+          {
+            "label": "品牌溢价",
+            "note": "提升45%"
+          }
+        ],
+        "metrics": [
+          {
+            "k": "营收增长",
+            "v": "185%",
+            "unit": "同比"
+          },
+          {
+            "k": "用户增长",
+            "v": "240%",
+            "unit": "新客"
+          },
+          {
+            "k": "品牌估值",
+            "v": "320%",
+            "unit": "ROI"
+          }
+        ],
+        "closingLine": "数据来源：品牌审计报告",
+        "factorCount": 4,
+        "metricCount": 3
+      }
+    }
+  ]
+}

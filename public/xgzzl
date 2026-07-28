@@ -1,0 +1,12 @@
+{
+  "name": "@耳人水",                        
+  "links": [
+    {
+      "platform": "xiaohongshu",
+      "url": "https://www.xiaohongshu.com/user/profile/62f4a3f7000000001e01d640",  
+      "icon": "assets/social-icons/redbook.svg",             
+      "label": "小红书"
+    }
+    
+  ]
+}

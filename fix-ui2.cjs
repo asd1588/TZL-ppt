@@ -1,0 +1,20 @@
+const fs = require("fs");
+const list = ["bp-plan","ai-tech","tech-arch","brand-launch","market-data","data-report","research","luxury-brand","brand-story","finance-report","growth-plan","music-festival"];
+const css = '<style>\n/* CUSTOM: REPLACE BELOW ========== */\n';
+const c1 = '.preview-author-name{font-size:0!important}\n';
+const c2 = '.preview-author-name::before{content:"@user_name";font-size:12px!important}\n';
+const c3 = '.preview-author-links a{display:none!important}\n';
+const c4 = '.preview-author-links::after{content:"wechat / email / github";font:500 11px/1 var(--sans-zh);color:var(--pp-fg2);padding:4px 0}\n';
+const c5 = '#preview-lang-toggle{display:none!important}\n';
+const c6 = '/* #preview-theme-toggle{display:none!important} */\n';
+const end = '/* ================================ */\n</style>';
+const all = css + c1 + c2 + c3 + c4 + c5 + c6 + end;
+list.forEach(p => {
+  let h = fs.readFileSync("E:/myppt/public/ppt/" + p + "/index.html", "utf8");
+  const s = h.indexOf("/* ========== CUSTOM");
+  const e = h.indexOf("</style>", s) + 8;
+  h = h.substring(0, s) + all + h.substring(e);
+  fs.writeFileSync("E:/myppt/public/ppt/" + p + "/index.html", h, "utf8");
+  console.log(p);
+});
+console.log("DONE");

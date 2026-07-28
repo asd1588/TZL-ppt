@@ -12,15 +12,10 @@ import Notification from "./components/Notification/Notification"
 
 export default function App() {
   const [notice, setNotice] = useState("")
-  const showNotice = useCallback((msg) => {
-    setNotice(msg); setTimeout(() => setNotice(""), NOTICE_DURATION)
-  }, [])
+  const showNotice = useCallback((msg) => { setNotice(msg); setTimeout(() => setNotice(""), NOTICE_DURATION) }, [])
   const { topIdx, start, stop } = useCarousel(CAROUSEL_INTERVAL, 5)
-  const scrollTo = useCallback((sectionId) => {
-    const el = document.getElementById(sectionId)
-    if (el) el.scrollIntoView({ behavior: "smooth" })
-  }, [])
   const [selectedType, setSelectedType] = useState(null)
+  const scrollTo = useCallback((id) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }) }, [])
 
   return (
     <div className="shell">
@@ -31,7 +26,7 @@ export default function App() {
             <div className="hero-text">
               <div className="eyebrow"><span className="dot"></span> 每周上新 · 创意演示灵感</div>
               <h1>让每一页<em>PPT</em><br />都有登场的勇气</h1>
-              <p className="intro">从有趣的想法到动人的故事</p>
+              <p className="intro">从有趣的想法到动人的故事，为你的表达找到一份恰到好处的视觉灵感。</p>
             </div>
             <div className="hero-earth-area">
               <div className="dash-line"></div>
@@ -43,10 +38,8 @@ export default function App() {
             <FolderStack topIdx={topIdx} start={start} stop={stop} />
           </div>
           <div className="doodle-area">
-            <span className="squiggle s1"></span>
-            <span className="squiggle s2"></span>
-            <span className="squiggle s3"></span>
-            <span className="sparkle"></span>
+            <span className="squiggle s1"></span><span className="squiggle s2"></span>
+            <span className="squiggle s3"></span><span className="sparkle"></span>
           </div>
         </section>
         <WorkTypes id="types" activeType={selectedType} onSelect={setSelectedType} scrollTo={scrollTo} />

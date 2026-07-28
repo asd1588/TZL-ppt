@@ -12,6 +12,7 @@
    const [activeItem, setActiveItem] = useState("首页")
    const ticking = useRef(false)
  
+   /* 滚动时找最接近视口顶部（+100px 头部偏移）的 section */
    useEffect(() => {
      const calc = () => {
        const scrollY = window.scrollY + 100

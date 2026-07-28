@@ -1,0 +1,28 @@
+{
+  "title": "技术架构设计方案",
+  "goal": "面向技术团队和工程师的深度架构设计与开发实践分享",
+  "themePack": "theme03",
+  "pageCount": 5,
+  "slides": [
+    {
+      "layout": "theme03_page002",
+      "props": {}
+    },
+    {
+      "layout": "theme03_page063",
+      "props": {}
+    },
+    {
+      "layout": "theme03_page016",
+      "props": {}
+    },
+    {
+      "layout": "theme03_page007",
+      "props": {}
+    },
+    {
+      "layout": "theme03_page006",
+      "props": {}
+    }
+  ]
+}
