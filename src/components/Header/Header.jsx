@@ -9,7 +9,8 @@ export default function Header({ showNotice, scrollTo, onSearchSelect }) {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedIdx, setSelectedIdx] = useState(-1)
+  const [selectedIdx, setSelectedIdx] = useState(-1);
+  const [mobileOpen, setMobileOpen] = useState(false)
   const ticking = useRef(false)
   const searchRef = useRef(null)
   const debounceRef = useRef(null)
@@ -168,6 +169,21 @@ export default function Header({ showNotice, scrollTo, onSearchSelect }) {
             </button>
           ))}
         </nav>
+        <button className="hamburger" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? "✕" : "☰"}
+        </button>
+        {mobileOpen && <div className="mobile-overlay" onClick={() => setMobileOpen(false)} />}
+        <div className={"mobile-nav-panel" + (mobileOpen ? " open" : "")}>
+          {NAV.map((item) => (
+            <button
+              key={item}
+              className={item === "定制" ? "nav-cta-orange" : "mobile-nav-btn" + (activeItem === item ? " active" : "")}
+              onClick={() => { handleNavClick(item); setMobileOpen(false); }}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
       </div>
     </header>
   )
