@@ -39,11 +39,11 @@ export const HERO = {
 
 // ───── 五、首页文件夹堆叠 ─────
 export const FOLDERS = [
-  { id: "folder-cover",   cover: "#fce4b8", bgImage: "/img/folder-1.png", title: "封面主题",   sub: "COVER TITLE" },
-  { id: "folder-showcase",cover: "#f5d78e", bgImage: "/img/folder-2.png", title: "项目展示",   sub: "PROJECT SHOWCASE" },
-  { id: "folder-creative",cover: "#edc56a", bgImage: "/img/folder-3.png", title: "灵感创意",   sub: "CREATIVE IDEAS" },
-  { id: "folder-works",   cover: "#e4b548", bgImage: "/img/folder-4.png", title: "设计成果",   sub: "DESIGN WORKS" },
-  { id: "folder-brand",   cover: "#dba73a", bgImage: "/img/folder-5.png", title: "品牌故事",   sub: "BRAND STORY" },
+  { id: "folder-cover",   cover: "#fce4b8", bgImage: "url(/img/folder-1.png)", title: "封面主题",   sub: "COVER TITLE" },
+  { id: "folder-showcase",cover: "#f5d78e", bgImage: "url(/img/folder-2.png)", title: "项目展示",   sub: "PROJECT SHOWCASE" },
+  { id: "folder-creative",cover: "#edc56a", bgImage: "url(/img/folder-3.png)", title: "灵感创意",   sub: "CREATIVE IDEAS" },
+  { id: "folder-works",   cover: "#e4b548", bgImage: "url(/img/folder-4.png)", title: "设计成果",   sub: "DESIGN WORKS" },
+  { id: "folder-brand",   cover: "#dba73a", bgImage: "url(/img/folder-5.png)", title: "品牌故事",   sub: "BRAND STORY" },
 ]
 
 // ───── 六、作品类型（走马灯） ─────
@@ -74,10 +74,10 @@ export const THEMES = [
 // cover: 封面图片路径，或 "linear-gradient(...)" 纯色渐变
 export const WORKS = [
   // ★ 精选 4 套（默认展示）
-  { themeId: "theme02", tag: "科技发布", title: "AI 智能科技发布会",   desc: "12页 / 紫绿渐变",    color: "#b8a0d8", cover: "/img/cover-ai-tech.png" },
-  { themeId: "theme04", tag: "品牌方案", title: "年轻化消费品牌发布",   desc: "12页 / 粉糖果色",    color: "#f8c8d8", cover: "/img/cover-brand-launch.png" },
-  { themeId: "theme01", tag: "创业项目", title: "创业项目BP策划方案",   desc: "12页 / 温暖米色",    color: "#e8dcc8", cover: "/img/cover-bp-plan.png" },
-  { themeId: "theme06", tag: "数据分析", title: "年度数据战略报告",     desc: "12页 / 深海军蓝",    color: "#1a2332", cover: "/img/cover-data-report.png" },
+  { themeId: "theme02", tag: "科技发布", title: "AI 智能科技发布会",   desc: "12页 / 紫绿渐变",    color: "#b8a0d8", cover: "url(/img/cover-ai-tech.png)" },
+  { themeId: "theme04", tag: "品牌方案", title: "年轻化消费品牌发布",   desc: "12页 / 粉糖果色",    color: "#f8c8d8", cover: "url(/img/cover-brand-launch.png)" },
+  { themeId: "theme01", tag: "创业项目", title: "创业项目BP策划方案",   desc: "12页 / 温暖米色",    color: "#e8dcc8", cover: "url(/img/cover-bp-plan.png)" },
+  { themeId: "theme06", tag: "数据分析", title: "年度数据战略报告",     desc: "12页 / 深海军蓝",    color: "#1a2332", cover: "url(/img/cover-data-report.png)" },
   // ★ 其余 8 套（点击"查看全部"后展示）
   { themeId: "theme03", tag: "开发者大会", title: "技术架构设计方案",   desc: "5页 / 深蓝灰",      color: "#2d3445", cover: "linear-gradient(135deg,#2d3445,#5a7d9c)" },
   { themeId: "theme05", tag: "市场分析",   title: "市场趋势数据分析",   desc: "5页 / 暖黄色谱",    color: "#f0e68c", cover: "linear-gradient(135deg,#f0e68c,#d4a373)" },
@@ -88,11 +88,11 @@ export const WORKS = [
   { themeId: "theme11", tag: "增长策略",   title: "用户增长策略方案",   desc: "5页 / 深绿亮绿",    color: "#1a3a2a", cover: "linear-gradient(135deg,#1a3a2a,#6abf6a)" },
   { themeId: "theme12", tag: "娱乐活动",   title: "音乐节品牌企划案",   desc: "5页 / 深紫霓虹",    color: "#2a1035", cover: "linear-gradient(135deg,#2a1035,#e060d0)" },
   // ★ 文件夹跳转专用 5 套（与上方 FOLDERS 对应）
-  { themeId: "folder-cover",    tag: "封面主题", title: "TZL PPT 品牌形象册",     desc: "8页 / 品牌形象",   color: "#fce4b8", cover: "/img/folder-1.png" },
-  { themeId: "folder-showcase", tag: "项目展示", title: "TZL 项目优势说明书",     desc: "10页 / 项目优势",  color: "#f5d78e", cover: "/img/folder-2.png" },
-  { themeId: "folder-creative", tag: "灵感创意", title: "2026 演示设计灵感趋势",   desc: "8页 / 灵感趋势",   color: "#edc56a", cover: "/img/folder-3.png" },
-  { themeId: "folder-works",    tag: "设计成果", title: "精选设计作品集",         desc: "8页 / 作品案例",   color: "#e4b548", cover: "/img/folder-4.png" },
-  { themeId: "folder-brand",    tag: "品牌故事", title: "TZL 品牌故事传播方案",   desc: "6页 / 品牌故事",   color: "#dba73a", cover: "/img/folder-5.png" },
+  { themeId: "folder-cover",    tag: "封面主题", title: "TZL PPT 品牌形象册",     desc: "8页 / 品牌形象",   color: "#fce4b8", cover: "url(/img/folder-1.png)" },
+  { themeId: "folder-showcase", tag: "项目展示", title: "TZL 项目优势说明书",     desc: "10页 / 项目优势",  color: "#f5d78e", cover: "url(/img/folder-2.png)" },
+  { themeId: "folder-creative", tag: "灵感创意", title: "2026 演示设计灵感趋势",   desc: "8页 / 灵感趋势",   color: "#edc56a", cover: "url(/img/folder-3.png)" },
+  { themeId: "folder-works",    tag: "设计成果", title: "精选设计作品集",         desc: "8页 / 作品案例",   color: "#e4b548", cover: "url(/img/folder-4.png)" },
+  { themeId: "folder-brand",    tag: "品牌故事", title: "TZL 品牌故事传播方案",   desc: "6页 / 品牌故事",   color: "#dba73a", cover: "url(/img/folder-5.png)" },
 ]
 
 // ───── 九、联系方式 ─────

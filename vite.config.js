@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import fs from "fs";
 
 export default defineConfig({
-  base: "/TZL-ppt/",
   plugins: [
     react(),
     {

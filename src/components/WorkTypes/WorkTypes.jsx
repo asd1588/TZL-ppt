@@ -107,7 +107,7 @@ export default function WorkTypes({ id, activeType, onSelect, scrollTo }) {
             <div
               key={i}
               className={"type-card" + (activeType === t.label ? " type-active" : "")}
-              style={activeType !== t.label ? { background: "url(" + (import.meta.env.BASE_URL || "/") + "img/folder-" + ((i % 4) + 1) + ".png) center/cover no-repeat" } : undefined}
+              style={activeType !== t.label ? { background: "url(/img/folder-" + ((i % 4) + 1) + ".png) center/cover no-repeat" } : undefined}
               onClick={() => {
                 const next = t.label === activeType ? null : t.label
                 onSelect(next)

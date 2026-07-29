@@ -5,7 +5,7 @@ import { NAV, WORKS, THEMES, BRAND, SEARCH, SECTION_MAP } from "../../data/const
 const SECTION_IDS = Object.values(SECTION_MAP)
 
 export default function Header({ showNotice, scrollTo, onSearchSelect }) {
-  const [activeItem, setActiveItem] = useState("棣栭〉")
+  const [activeItem, setActiveItem] = useState("首页")
   const [query, setQuery] = useState("")
   const [results, setResults] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
@@ -125,7 +125,7 @@ export default function Header({ showNotice, scrollTo, onSearchSelect }) {
             <div className="search-dropdown">
               {results.works.length > 0 && (
                 <div className="search-group">
-                  <div className="search-group-title">浣滃搧</div>
+                  <div className="search-group-title">作品</div>
                   {results.works.map((w, i) => (
                     <div key={w.themeId}
                       className={"search-item" + (selectedIdx === i ? " search-item-active" : "")}
@@ -161,7 +161,7 @@ export default function Header({ showNotice, scrollTo, onSearchSelect }) {
           {NAV.map((item) => (
             <button
               key={item}
-              className={item === "瀹氬埗" ? "nav-cta-orange" : "nav-btn" + (activeItem === item ? " active" : "")}
+              className={item === "定制" ? "nav-cta-orange" : "nav-btn" + (activeItem === item ? " active" : "")}
               onClick={() => handleNavClick(item)}
             >
               {item}
