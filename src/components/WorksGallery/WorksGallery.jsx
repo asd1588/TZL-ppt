@@ -55,7 +55,7 @@ export default function WorksGallery({ id, focusedWork, onFocusClear }) {
                 className={"work" + (focusId === w.themeId ? " work-focused" : "")}
                 onClick={() => handleClick(w)}
               >
-                <div className="tilt-card-art" style={{ height: "143px", borderRadius: "14px 14px 0 0", background: w.cover || w.color }}>
+                <div className="tilt-card-art" style={{ height: "143px", borderRadius: "14px 14px 0 0", background: (typeof w.cover === "string" && w.cover.startsWith("/")) ? "url(" + (import.meta.env.BASE_URL || "/") + w.cover.slice(1) + ")" : (w.cover || w.color) }}>
                   {PREVIEWS[w.themeId] && <span className="work-preview-badge">▶ 预览</span>}
                 </div>
                 <div className="tilt-card-body">
@@ -90,7 +90,7 @@ export default function WorksGallery({ id, focusedWork, onFocusClear }) {
                 style={{ animationDelay: (i % 4) * 0.08 + "s", cursor: PREVIEWS[w.themeId] ? "pointer" : "default" }}
                 onClick={() => handleClick(w)}
               >
-                <div className="tilt-card-art" style={{ height: "110px", borderRadius: "14px 14px 0 0", background: w.cover || w.color }}>
+                <div className="tilt-card-art" style={{ height: "110px", borderRadius: "14px 14px 0 0", background: (typeof w.cover === "string" && w.cover.startsWith("/")) ? "url(" + (import.meta.env.BASE_URL || "/") + w.cover.slice(1) + ")" : (w.cover || w.color) }}>
                   {PREVIEWS[w.themeId] && <span className="work-preview-badge">▶ 预览</span>}
                 </div>
                 <div className="tilt-card-body">
