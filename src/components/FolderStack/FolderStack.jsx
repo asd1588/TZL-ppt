@@ -15,14 +15,15 @@
            <div
              key={i}
              className="folder"
-             style={{ "--idx": relIdx, background: f.cover }}
+            style={{ "--idx": relIdx, background: f.cover, cursor: "pointer" }}
+            onClick={() => { document.title = "Folder: " + f.id; onFolderClick && onFolderClick(f.id); }}
            >
              {/* 文件夹标签 */}
              <div className="folder-tab"></div>
              {/* 封面预览区 */}
              <div
                className="folder-preview"
-               style={{ background: f.cover, filter: "brightness(.9) saturate(.8)" }}
+               style={{ background: f.bgImage || f.cover, backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(.9) saturate(.8)" }}
              ></div>
              {/* 标题信息 */}
              <div className="folder-info">

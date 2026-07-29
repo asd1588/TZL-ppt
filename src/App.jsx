@@ -1,8 +1,9 @@
-import { useState, useCallback } from "react"
+﻿import { useState, useCallback } from "react"
 import "./App.css"
-import { NOTICE_DURATION, CAROUSEL_INTERVAL } from "./data/constants"
+import { NOTICE_DURATION, CAROUSEL_INTERVAL, HERO } from "./data/constants"
 import useCarousel from "./hooks/useCarousel"
 import Header from "./components/Header/Header"
+import PixelBlast from "./components/PixelBlast/PixelBlast"
 import FolderStack from "./components/FolderStack/FolderStack"
 import WorkTypes from "./components/WorkTypes/WorkTypes"
 import ThemeShowcase from "./components/ThemeShowcase/ThemeShowcase"
@@ -31,14 +32,17 @@ export default function App() {
 
   return (
     <div className="shell">
-      <Header showNotice={showNotice} scrollTo={scrollTo} />
+      <Header showNotice={showNotice} scrollTo={scrollTo} onSearchSelect={onThemeClick} />
       <main className="main">
-        <section className="hero" id="hero">
-          <div className="hero-left">
+        <section className="hero" id="hero" style={{position:"relative"}}>
+          <div style={{position:"absolute",inset:0,zIndex:0,pointerEvents:"none"}}>
+            <PixelBlast variant="circle" pixelSize={4} color="#2d3445" patternScale={2} patternDensity={0.8} enableRipples liquid transparent speed={0.3} edgeFade={0.3} />
+          </div>
+          <div className="hero-left" style={{position:"relative",zIndex:1}}>
             <div className="hero-text">
-              <div className="eyebrow"><span className="dot"></span> 每周上新 · 创意演示灵感</div>
-              <h1>让每一页<em>PPT</em><br />都有登场的勇气</h1>
-              <p className="intro">从有趣的想法到动人的故事，为你的表达找到一份恰到好处的视觉灵感。</p>
+              <div className="eyebrow"><span className="dot"></span> {HERO.eyebrow}</div>
+              <h1>{HERO.title}<em>{HERO.titleEm}</em><br />{HERO.titleEnd}</h1>
+              <p className="intro">{HERO.intro}</p>
             </div>
             <div className="hero-earth-area">
               <div className="dash-line"></div>
@@ -46,8 +50,8 @@ export default function App() {
               <div className="earth"></div><div className="orbit"></div>
             </div>
           </div>
-          <div className="hero-right">
-            <FolderStack topIdx={topIdx} start={start} stop={stop} onFolderClick={onFolderClick} />
+          <div className="hero-right" style={{position:"relative",zIndex:1}}>
+            <FolderStack topIdx={topIdx} start={start} stop={stop} onFolderClick={onThemeClick} />
           </div>
           <div className="doodle-area">
             <span className="squiggle s1"></span><span className="squiggle s2"></span>

@@ -1,7 +1,7 @@
-/* ===== WorksGallery ===== */
+﻿/* ===== WorksGallery ===== */
 import { useState, useEffect, useRef } from "react"
 import TiltedCard from "../TiltedCard/TiltedCard"
-import { WORKS } from "../../data/constants"
+import { WORKS, SECTION_TITLES } from "../../data/constants"
 
 const LIMIT = 4
 const PREVIEWS = {
@@ -9,6 +9,7 @@ const PREVIEWS = {
   "folder-showcase":"/ppt/folder-showcase/index.html",
   "folder-creative":"/ppt/folder-creative/index.html",
   "folder-works":"/ppt/folder-works/index.html",
+  "folder-brand":"/ppt/folder-brand/index.html",
   theme01:"/ppt/bp-plan/index.html",theme02:"/ppt/ai-tech/index.html",theme03:"/ppt/tech-arch/index.html",
   theme04:"/ppt/brand-launch/index.html",theme05:"/ppt/market-data/index.html",theme06:"/ppt/data-report/index.html",
   theme07:"/ppt/research/index.html",theme08:"/ppt/luxury-brand/index.html",theme09:"/ppt/brand-story/index.html",
@@ -37,14 +38,14 @@ export default function WorksGallery({ id, focusedWork, onFocusClear }) {
     <section className="works-section" id={id}>
       <div className="section-head">
         <div>
-          <h2>作品展示</h2>
-          <p>12 套 5 页精致模板</p>
+          <h2>{SECTION_TITLES.works.title}</h2>
+          <p>{SECTION_TITLES.works.desc}</p>
         </div>
         <button className="view-all" onClick={() => { if (focusId) { onFocusClear && onFocusClear(); setFocusId(null); setShowAll(false); } else { setShowAll(!showAll); } }}>
-          {focusId ? "← 回到精选" : (showAll ? "收起 ↑" : "查看全部 →")}
+          {focusId ? SECTION_TITLES.works.backToShowcase : (showAll ? SECTION_TITLES.works.collapse : SECTION_TITLES.works.showAll)}
         </button>
       </div>
-      {focusedDisplay ? (
+      {focusedDisplay && focusedDisplay.length > 0 ? (
         <div className="gallery gallery-focused">
           {focusedDisplay.map((w, i) => {
             const card = (
@@ -118,3 +119,5 @@ export default function WorksGallery({ id, focusedWork, onFocusClear }) {
     </section>
   )
 }
+
+
