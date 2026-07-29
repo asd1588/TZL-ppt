@@ -111,13 +111,13 @@ export const CONTACT_CARDS = {
       <path d="M15 14h18v4H15zm0 8h18v4H15zm0 8h18v4H15z" fill="#fff" opacity=".9"/>
     </svg>`,
     title: "小红书",
-    name: "@耳人水",
+    name: "@耳人水ppt",
     action: "主页",
     link: "https://xhslink.cn/m/9ThIm3ksNaD",   // 跳转链接
   },
   wechat: {
     title: "微信",
-    name: "偷着乐ppt",
+    name: "",
     action: "点击扫码 参与定制",
     qrImage: "/img/wechat-qr.jpg",               // 二维码图片路径
     qrLabel: "微信 · 二维码",

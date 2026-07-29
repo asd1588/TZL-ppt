@@ -51,7 +51,7 @@
  
  /* 鍙虫爮锛氭枃浠跺す鍫嗗彔锛堝崱鐗囧唴涓嶆孩鍑猴級 */
  .hero-right{flex:1;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;min-height:440px}
- .folder-stack{perspective:800px;position:relative;width:340px;height:420px;margin:0 auto}
+ .folder-stack{perspective:800px;position:relative;width:340px;height:420px;margin:0 auto;top:60px}
  .folder{position:absolute;width:320px;height:270px;border-radius:14px 14px 18px 18px;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:0 6px 28px rgba(0,0,0,.08);top:calc(var(--idx)*12px);left:calc(var(--idx)*14px);z-index:calc(5 - var(--idx));transition:all .5s cubic-bezier(.34,1.56,.64,1);cursor:pointer;transform-origin:0% 100%;transform:rotate(calc((1 - min(var(--idx,1),1)) * -5deg))}
  .folder-tab{position:absolute;top:-12px;left:24px;width:52px;height:12px;border-radius:6px 6px 0 0;background:rgba(0,0,0,.06)}
  .folder-preview{height:140px;border-radius:8px}
