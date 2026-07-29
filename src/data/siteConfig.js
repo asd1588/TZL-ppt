@@ -137,9 +137,9 @@ export const CONTACT_CARDS = {
 // ───── 十一、模块标题 ─────
 export const SECTION_TITLES = {
   workTypes: { title: "作品类型", desc: "四种表达方式，总有一种适合你的故事" },
-  themes:    { title: "主题风格", desc: "12 套预设风格，总有一款适合你的场景" },
-  works: { title: "作品展示", desc: "12 套精选 5 页精致模板", showAll: "查看全部 →", collapse: "收起 ↑", backToShowcase: "← 回到精选" },
-  contact:   { title: "联系我们", desc: "定制属于你的专属 PPT" },
+  themes:    { title: "主题风格", desc: "总有一款适合你的场景" },
+  works: { title: "作品展示", desc: "精选模板", showAll: "查看全部 →", collapse: "收起 ↑", backToShowcase: "← 回到精选" },
+  contact:   { title: "联系我", desc: "定制属于你的专属 PPT" },
 }
 
 // ───── 十二、其他常量 ─────
