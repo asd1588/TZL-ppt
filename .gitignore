@@ -7,3 +7,7 @@ fix_*
 !src/**/*.js
 
 ghp_*
+
+fix_*
+ghp_*
+deploy.*
