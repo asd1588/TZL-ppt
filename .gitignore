@@ -5,3 +5,5 @@ dist/
 *.js
 fix_*
 !src/**/*.js
+
+ghp_*
