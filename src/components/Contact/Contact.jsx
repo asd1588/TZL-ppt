@@ -64,7 +64,7 @@ const Contact = forwardRef(function Contact(props, ref) {
                 {cfg && (
                   <div className="flip-back">
                     <span className="flip-back-label">{cfg.qrLabel}</span>
-                    <img className="qr-code" src={cfg.qrImage} alt={cfg.qrLabel} />
+                    <img className="qr-code" src={cfg.qrImage} alt={cfg.qrLabel} loading="lazy" />
                     <p className="contact-desc">{cfg.qrDesc}</p>
                   </div>
                 )}
