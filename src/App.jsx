@@ -1,4 +1,4 @@
-﻿import { useState, useCallback, Suspense } from "react"
+﻿import React, { useState, useCallback, Suspense } from "react"
 import "./App.css"
 import { NOTICE_DURATION, CAROUSEL_INTERVAL, HERO } from "./data/constants"
 import useCarousel from "./hooks/useCarousel"
@@ -36,9 +36,10 @@ export default function App() {
       <Header showNotice={showNotice} scrollTo={scrollTo} onSearchSelect={onThemeClick} />
       <main className="main">
         <section className="hero" id="hero" style={{position:"relative"}}>
-          <Suspense fallback={<div style={{width:"100%",height:"100%"}} />}>
-            <div style={{position:"absolute",inset:0,zIndex:0,pointerEvents:"none"}}>
+          <div style={{position:"absolute",inset:0,zIndex:0,pointerEvents:"none"}}>
+            <Suspense fallback={<div />}>
             <PixelBlast variant="circle" pixelSize={4} color="#2d3445" patternScale={2} patternDensity={0.8} enableRipples liquid transparent speed={0.3} edgeFade={0.3} />
+            </Suspense>
           </div>
           <div className="hero-left" style={{position:"relative",zIndex:1}}>
             <div className="hero-text">
