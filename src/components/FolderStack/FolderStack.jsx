@@ -5,7 +5,7 @@
  */
  import { FOLDERS } from "../../data/constants"
  
- export default function FolderStack({ topIdx, start, stop }) {
+ export default function FolderStack({ topIdx, start, stop, onFolderClick }) {
    return (
      <div className="folder-stack" onMouseEnter={stop} onMouseLeave={start}>
        {FOLDERS.map((f, i) => {

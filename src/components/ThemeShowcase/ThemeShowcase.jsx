@@ -6,7 +6,7 @@
  
  const LIMIT = 3
  
- export default function ThemeShowcase({ id, activeType, onSelect }) {
+export default function ThemeShowcase({ id, activeType, onSelect, onThemeClick }) {
    const [showAll, setShowAll] = useState(false)
    const isFiltered = !!activeType
  
@@ -46,7 +46,7 @@
        </div>
        <div className={"theme-grid" + (!isFiltered && showAll ? " theme-grid-expanded" : "")}>
          {display.map((t, i) => (
-           <div key={t.id} className="theme-card" style={{ animationDelay: (i % 3) * 0.06 + "s" }}>
+           <div key={t.id} className="theme-card" style={{ animationDelay: (i % 3) * 0.06 + "s", cursor: "pointer" }} onClick={() => onThemeClick && onThemeClick(t.id)}>
              <div className="theme-colorbar" style={{ background: t.color }}>
                <span className="theme-accentbar" style={{ background: t.accent }}></span>
                <span className="theme-cid">{t.id.replace("theme", "#")}</span>

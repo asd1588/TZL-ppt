@@ -95,21 +95,23 @@
  .view-all{border:0;background:transparent;font-weight:600;font-size:15px;cursor:pointer;transition:color .2s}
  .view-all:hover{color:var(--orange)}
  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
- .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
- .work{position:relative;min-height:220px;padding:14px;background:#fffdf6;border:2px solid var(--ink);border-radius:12px;box-shadow:6px 7px 0 #d8c98f;transition:transform .25s;opacity:0;animation:fadeUp .6s ease-out forwards}
+ .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 20px}
+ .work{position:relative;min-height:200px;padding:12px;background:#fffdf6;border:2px solid var(--ink);border-radius:12px;box-shadow:6px 7px 0 #d8c98f;transition:transform .25s;opacity:0;animation:fadeUp .6s ease-out forwards}
  .work:hover{transform:translateY(-6px);box-shadow:8px 13px 0 #d8c98f}
  .art{height:120px;border-radius:6px;position:relative;overflow:hidden}
  
 .art-shape{position:absolute;width:60%;height:12px;top:24px;left:16px;border-radius:99px;background:rgba(255,255,255,.92);box-shadow:0 22px 0 rgba(255,255,255,.7)}
  @keyframes artPulse{0%,100%{opacity:.6}50%{opacity:1}}
- .work-preview-badge{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;z-index:2}
+ .work-focused{outline:3px solid var(--orange)!important;outline-offset:-3px;border-radius:14px;box-shadow:0 0 30px rgba(245,166,35,.45)!important;transform:scale(1.05);transition:transform .4s cubic-bezier(.68,-.55,.27,1.55)!important;position:relative;z-index:10!important}.work-focused h3{color:var(--orange)!important}.tilt-card-art{position:relative;overflow:hidden;border-radius:14px 14px 0 0}
+.gallery-focused{display:flex!important;justify-content:center;align-items:center;flex-direction:column}.gallery-focused .tilted-card-figure,.gallery-focused .work{max-width:420px;width:100%;margin:0 auto}.tilt-card-body{padding:10px 12px 12px}.tilt-card-body .tag{display:inline-block;padding:2px 8px;border-radius:4px;background:var(--cream);color:var(--ink);font-size:10px;font-weight:600;margin-bottom:6px}.tilt-card-body h3{font-size:13px;margin:0 0 2px;line-height:1.3}.tilt-card-body p{font-size:11px;color:#77756c;margin:0}.work-preview-badge{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px;z-index:2}
 .art::after{content:"";position:absolute;width:60px;height:60px;right:12px;bottom:10px;background:rgba(255,255,255,.92);border-radius:50% 50% 12px 50%;transform:rotate(-19deg);animation:artPulse 4s ease-in-out infinite}
  .tag{display:inline-block;margin-top:10px;color:#756f5e;font-size:11px}
  .work h3{margin:4px 0 0;font-size:14px}.work p{margin:3px 0 0;color:#999284;font-size:11px}
  
  /* ===== 联系方式 ===== */
  .contact{padding:40px 0 80px;margin-top:10px}
- .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+ .works-section{margin-bottom:60px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
  .contact-card{text-align:center;padding:40px 20px;background:#fffdf6;border:2px solid var(--ink);border-radius:16px;box-shadow:8px 9px 0 #d8c98f;transition:transform .25s}
  .contact-card:hover{transform:translateY(-6px);box-shadow:10px 15px 0 #d8c98f}
  .contact-icon{font-size:40px;display:block;margin-bottom:12px}

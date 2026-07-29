@@ -15,6 +15,18 @@ export default function App() {
   const showNotice = useCallback((msg) => { setNotice(msg); setTimeout(() => setNotice(""), NOTICE_DURATION) }, [])
   const { topIdx, start, stop } = useCarousel(CAROUSEL_INTERVAL, 5)
   const [selectedType, setSelectedType] = useState(null)
+  const [focusedWork, setFocusedWork] = useState(null)
+  const onFolderClick = useCallback((folderId) => {
+    setFocusedWork(folderId)
+    const el = document.getElementById("works")
+    if (el) el.scrollIntoView({ behavior: "smooth" })
+  }, [])
+
+  const onThemeClick = useCallback((themeId) => {
+    setFocusedWork(themeId)
+    const el = document.getElementById("works")
+    if (el) el.scrollIntoView({ behavior: "smooth" })
+  }, [])
   const scrollTo = useCallback((id) => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }) }, [])
 
   return (
@@ -35,7 +47,7 @@ export default function App() {
             </div>
           </div>
           <div className="hero-right">
-            <FolderStack topIdx={topIdx} start={start} stop={stop} />
+            <FolderStack topIdx={topIdx} start={start} stop={stop} onFolderClick={onFolderClick} />
           </div>
           <div className="doodle-area">
             <span className="squiggle s1"></span><span className="squiggle s2"></span>
@@ -43,8 +55,8 @@ export default function App() {
           </div>
         </section>
         <WorkTypes id="types" activeType={selectedType} onSelect={setSelectedType} scrollTo={scrollTo} />
-        <ThemeShowcase id="themes" activeType={selectedType} onSelect={setSelectedType} />
-        <WorksGallery id="works" />
+        <ThemeShowcase id="themes" activeType={selectedType} onSelect={setSelectedType} onThemeClick={onThemeClick} />
+        <WorksGallery id="works" focusedWork={focusedWork} onFocusClear={() => setFocusedWork(null)} />
         <Contact id="contact" />
       </main>
       <Notification message={notice} />
