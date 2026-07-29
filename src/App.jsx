@@ -5,6 +5,7 @@ import useCarousel from "./hooks/useCarousel"
 import Header from "./components/Header/Header"
 import PixelBlast from "./components/PixelBlast/PixelBlast"
 import FolderStack from "./components/FolderStack/FolderStack"
+import VinylPlayer from "./components/VinylPlayer/VinylPlayer"
 import WorkTypes from "./components/WorkTypes/WorkTypes"
 import ThemeShowcase from "./components/ThemeShowcase/ThemeShowcase"
 import WorksGallery from "./components/WorksGallery/WorksGallery"
@@ -44,11 +45,7 @@ export default function App() {
               <h1>{HERO.title}<em>{HERO.titleEm}</em><br />{HERO.titleEnd}</h1>
               <p className="intro">{HERO.intro}</p>
             </div>
-            <div className="hero-earth-area">
-              <div className="dash-line"></div>
-              <div className="plane"><span className="propeller"></span><span className="plane-body">&#9992;</span></div>
-              <div className="earth"></div><div className="orbit"></div>
-            </div>
+            <VinylPlayer />
           </div>
           <div className="hero-right" style={{position:"relative",zIndex:1}}>
             <FolderStack topIdx={topIdx} start={start} stop={stop} onFolderClick={onThemeClick} />
