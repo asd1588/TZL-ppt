@@ -13,9 +13,7 @@ export default function VinylPlayer() {
   const analyserRef = useRef(null)
   const rafRef = useRef(null)
   const wrapperRef = useRef(null)
-  const loadingRef = useRef(false)
-  const playingRef = useRef(false)
-  playingRef.current = playing
+  const initDone = useRef(false)
 
   const startLoop = useCallback(() => {
     const loop = () => {
@@ -34,48 +32,41 @@ export default function VinylPlayer() {
     loop()
   }, [])
 
-  const initAudio = useCallback(async () => {
+  // Init audio context once on mount
+  useEffect(() => {
     const audio = audioRef.current
-    if (!audio || analyserRef.current || loadingRef.current) return
-    loadingRef.current = true
-    try {
-      if (audio.readyState < 2) await new Promise(r => { audio.addEventListener("loadedmetadata", r, { once: true }); audio.load() })
-      const ctx = new (window.AudioContext || window.webkitAudioContext)()
-      const src = ctx.createMediaElementSource(audio)
-      const analyser = ctx.createAnalyser()
-      analyser.fftSize = 256
-      src.connect(analyser)
-      analyser.connect(ctx.destination)
-      ctxRef.current = ctx
-      analyserRef.current = analyser
-      await ctx.resume()
-      await audio.play()
-      setPlaying(true)
-      wrapperRef.current?.classList.add("vp-audio")
-      startLoop()
-    } catch (e) { console.warn(e.message) }
-    loadingRef.current = false
-  }, [startLoop])
-
-  useEffect(() => {
-    initAudio()
-    const handler = () => initAudio()
-    document.addEventListener("click", handler, { once: true })
-    return () => document.removeEventListener("click", handler)
-  }, [initAudio])
-
-  useEffect(() => {
+    if (!audio || initDone.current) return
+    const init = async () => {
+      try {
+        if (audio.readyState < 2) await new Promise(r => { audio.addEventListener("loadedmetadata", r, { once: true }); audio.load() })
+        const ctx = new (window.AudioContext || window.webkitAudioContext)()
+        const src = ctx.createMediaElementSource(audio)
+        const analyser = ctx.createAnalyser()
+        analyser.fftSize = 256
+        src.connect(analyser)
+        analyser.connect(ctx.destination)
+        ctxRef.current = ctx
+        analyserRef.current = analyser
+        initDone.current = true
+        // Try autoplay
+        await ctx.resume()
+        await audio.play()
+        setPlaying(true)
+        wrapperRef.current?.classList.add("vp-audio")
+        startLoop()
+      } catch { /* autoplay blocked, waiting for click */ }
+    }
+    init()
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       if (ctxRef.current) ctxRef.current.close()
     }
-  }, [])
+  }, [startLoop])
 
   const togglePlay = useCallback(() => {
     const audio = audioRef.current
-    if (!audio) return
-    if (!analyserRef.current) { initAudio(); return }
-    if (playingRef.current) {
+    if (!audio || !initDone.current) return
+    if (playing) {
       audio.pause()
       setPlaying(false)
       wrapperRef.current?.classList.remove("vp-audio")
@@ -88,7 +79,7 @@ export default function VinylPlayer() {
         startLoop()
       }).catch(() => setPlaying(false))
     }
-  }, [initAudio, startLoop])
+  }, [playing, startLoop])
 
   return (
     <div className={"vp-wrapper" + (playing ? "" : " vp-paused")} ref={wrapperRef}>

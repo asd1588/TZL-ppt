@@ -19,14 +19,14 @@ jobs:
 
       - run: npm ci
 
-      - name: Build with base path
-        run: npx vite build --base=/TZL-ppt/
+      - name: Build
+        run: npx vite build
 
-      - name: Fix inline paths in built files
+      - name: Fix paths for GitHub Pages
         run: |
-          sed -i 's|/img/|/TZL-ppt/img/|g' dist/assets/*.js dist/assets/*.css 2>/dev/null || true
-          sed -i 's|/audio/|/TZL-ppt/audio/|g' dist/assets/*.js 2>/dev/null || true
-          sed -i 's|"/ppt/|"/TZL-ppt/ppt/|g' dist/assets/*.js 2>/dev/null || true
+          sed -i "s|/img/|/TZL-ppt/img/|g" dist/assets/*.js dist/assets/*.css 2>/dev/null || true
+          sed -i "s|/audio/|/TZL-ppt/audio/|g" dist/assets/*.js 2>/dev/null || true
+          sed -i "s|\"/ppt/|\"/TZL-ppt/ppt/|g" dist/assets/*.js 2>/dev/null || true
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
