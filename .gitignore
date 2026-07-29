@@ -10,4 +10,5 @@ ghp_*
 
 fix_*
 ghp_*
-deploy.*
+deploy.cjs
+

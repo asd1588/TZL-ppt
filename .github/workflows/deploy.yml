@@ -1,0 +1,36 @@
+﻿name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Build with base path
+        run: npx vite build --base=/TZL-ppt/
+
+      - name: Fix inline paths in built files
+        run: |
+          # Fix IMG paths: /img/ -> /TZL-ppt/img/ in JS files
+          sed -i 's|/img/|/TZL-ppt/img/|g' dist/assets/*.js dist/assets/*.css 2>/dev/null || true
+          # Fix PPT preview paths: /ppt/ -> /TZL-ppt/ppt/ in JS files
+          sed -i 's|"/ppt/|"/TZL-ppt/ppt/|g' dist/assets/*.js 2>/dev/null || true
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
