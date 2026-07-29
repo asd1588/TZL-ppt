@@ -5,15 +5,15 @@ import { WORKS, SECTION_TITLES } from "../../data/constants"
 
 const LIMIT = 4
 const PREVIEWS = {
-  "folder-cover":"/ppt/folder-cover/index.html",
-  "folder-showcase":"/ppt/folder-showcase/index.html",
-  "folder-creative":"/ppt/folder-creative/index.html",
-  "folder-works":"/ppt/folder-works/index.html",
-  "folder-brand":"/ppt/folder-brand/index.html",
-  theme01:"/ppt/bp-plan/index.html",theme02:"/ppt/ai-tech/index.html",theme03:"/ppt/tech-arch/index.html",
-  theme04:"/ppt/brand-launch/index.html",theme05:"/ppt/market-data/index.html",theme06:"/ppt/data-report/index.html",
-  theme07:"/ppt/research/index.html",theme08:"/ppt/luxury-brand/index.html",theme09:"/ppt/brand-story/index.html",
-  theme10:"/ppt/finance-report/index.html",theme11:"/ppt/growth-plan/index.html",theme12:"/ppt/music-festival/index.html"
+  "folder-cover":"ppt/folder-cover/index.html",
+  "folder-showcase":"ppt/folder-showcase/index.html",
+  "folder-creative":"ppt/folder-creative/index.html",
+  "folder-works":"ppt/folder-works/index.html",
+  "folder-brand":"ppt/folder-brand/index.html",
+  theme01:"ppt/bp-plan/index.html",theme02:"ppt/ai-tech/index.html",theme03:"ppt/tech-arch/index.html",
+  theme04:"ppt/brand-launch/index.html",theme05:"ppt/market-data/index.html",theme06:"ppt/data-report/index.html",
+  theme07:"ppt/research/index.html",theme08:"ppt/luxury-brand/index.html",theme09:"ppt/brand-story/index.html",
+  theme10:"ppt/finance-report/index.html",theme11:"ppt/growth-plan/index.html",theme12:"ppt/music-festival/index.html"
 }
 
 export default function WorksGallery({ id, focusedWork, onFocusClear }) {
@@ -30,8 +30,8 @@ export default function WorksGallery({ id, focusedWork, onFocusClear }) {
   const display = focusedDisplay || (showAll ? WORKS : WORKS.slice(0, LIMIT))
 
   const handleClick = (w) => {
-    const url = PREVIEWS[w.themeId]
-    if (url) window.open(url, "_blank")
+    const base = import.meta.env.BASE_URL || "/"; const url = PREVIEWS[w.themeId]
+    if (url) window.open(base + url, "_blank")
   }
 
   return (
