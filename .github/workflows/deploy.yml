@@ -1,4 +1,4 @@
-﻿name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -22,12 +22,12 @@ jobs:
       - name: Build
         run: npx vite build --base=/TZL-ppt/
 
-     - name: Fix paths for GitHub Pages
-       run: |
-         sed -i "s|/img/|/TZL-ppt/img/|g" dist/assets/*.js 2>/dev/null || true
-         sed -i "s|/audio/|/TZL-ppt/audio/|g" dist/assets/*.js 2>/dev/null || true
-         sed -i "s|\"/ppt/|\"/TZL-ppt/ppt/|g" dist/assets/*.js 2>/dev/null || true
-         sed -i 's|"assets/|"/TZL-ppt/assets/|g' dist/assets/*.js 2>/dev/null || true
+      - name: Fix paths for GitHub Pages
+        run: |
+          sed -i "s|/img/|/TZL-ppt/img/|g" dist/assets/*.js 2>/dev/null || true
+          sed -i "s|/audio/|/TZL-ppt/audio/|g" dist/assets/*.js 2>/dev/null || true
+          sed -i "s|\"/ppt/|\"/TZL-ppt/ppt/|g" dist/assets/*.js 2>/dev/null || true
+          sed -i 's|"assets/|"/TZL-ppt/assets/|g' dist/assets/*.js 2>/dev/null || true
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
