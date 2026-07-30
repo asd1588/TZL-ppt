@@ -1,9 +1,9 @@
-﻿import React, { useState, useCallback, Suspense } from "react"
+﻿import { useState, useCallback } from "react"
 import "./App.css"
 import { NOTICE_DURATION, CAROUSEL_INTERVAL, HERO } from "./data/constants"
 import useCarousel from "./hooks/useCarousel"
 import Header from "./components/Header/Header"
-const PixelBlast = React.lazy(() => import("./components/PixelBlast/PixelBlast"))
+import PixelBlast from "./components/PixelBlast/PixelBlast"
 import FolderStack from "./components/FolderStack/FolderStack"
 import VinylPlayer from "./components/VinylPlayer/VinylPlayer"
 import WorkTypes from "./components/WorkTypes/WorkTypes"
@@ -37,9 +37,7 @@ export default function App() {
       <main className="main">
         <section className="hero" id="hero" style={{position:"relative"}}>
           <div style={{position:"absolute",inset:0,zIndex:0,pointerEvents:"none"}}>
-            <Suspense fallback={<div />}>
             <PixelBlast variant="circle" pixelSize={4} color="#2d3445" patternScale={2} patternDensity={0.8} enableRipples liquid transparent speed={0.3} edgeFade={0.3} />
-            </Suspense>
           </div>
           <div className="hero-left" style={{position:"relative",zIndex:1}}>
             <div className="hero-text">
