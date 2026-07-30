@@ -3,6 +3,15 @@ import react from "@vitejs/plugin-react";
 import fs from "fs";
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["three", "postprocessing"]
+        }
+      }
+    }
+  },
   plugins: [
     react(),
     {
