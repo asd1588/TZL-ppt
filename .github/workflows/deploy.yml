@@ -28,6 +28,7 @@ jobs:
           sed -i "s|/audio/|/TZL-ppt/audio/|g" dist/assets/*.js 2>/dev/null || true
           sed -i "s|\"/ppt/|\"/TZL-ppt/ppt/|g" dist/assets/*.js 2>/dev/null || true
           sed -i "s|/assets/|/TZL-ppt/assets/|g" dist/index.html dist/assets/*.js dist/assets/*.css 2>/dev/null || true
+          sed -i 's|"assets/|"/TZL-ppt/assets/|g' dist/assets/*.js 2>/dev/null || true
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
