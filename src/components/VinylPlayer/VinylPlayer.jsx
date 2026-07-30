@@ -13,7 +13,7 @@ export default function VinylPlayer() {
   const analyserRef = useRef(null)
   const rafRef = useRef(null)
   const wrapperRef = useRef(null)
-  const initDone = useRef(false)
+  const triedRef = useRef(false)
 
   const startLoop = useCallback(() => {
     const loop = () => {
@@ -32,11 +32,12 @@ export default function VinylPlayer() {
     loop()
   }, [])
 
-  // Init audio context once on mount
-  useEffect(() => {
+  const togglePlay = useCallback(async () => {
     const audio = audioRef.current
-    if (!audio || initDone.current) return
-    const init = async () => {
+    if (!audio) return
+
+    if (!analyserRef.current && !triedRef.current) {
+      triedRef.current = true
       try {
         if (audio.readyState < 2) await new Promise(r => { audio.addEventListener("loadedmetadata", r, { once: true }); audio.load() })
         const ctx = new (window.AudioContext || window.webkitAudioContext)()
@@ -47,39 +48,30 @@ export default function VinylPlayer() {
         analyser.connect(ctx.destination)
         ctxRef.current = ctx
         analyserRef.current = analyser
-        initDone.current = true
-        // Try autoplay
-        await ctx.resume()
-        await audio.play()
-        setPlaying(true)
-        wrapperRef.current?.classList.add("vp-audio")
-        startLoop()
-      } catch { /* autoplay blocked, waiting for click */ }
+      } catch (e) { console.warn("Audio init fail, playing without viz:", e.message) }
     }
-    init()
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
-      if (ctxRef.current) ctxRef.current.close()
-    }
-  }, [startLoop])
 
-  const togglePlay = useCallback(() => {
-    const audio = audioRef.current
-    if (!audio || !initDone.current) return
     if (playing) {
       audio.pause()
       setPlaying(false)
       wrapperRef.current?.classList.remove("vp-audio")
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     } else {
-      ctxRef.current?.resume()
+      ctxRef.current?.resume().catch(() => {})
       audio.play().then(() => {
         setPlaying(true)
         wrapperRef.current?.classList.add("vp-audio")
-        startLoop()
+        if (analyserRef.current) startLoop()
       }).catch(() => setPlaying(false))
     }
   }, [playing, startLoop])
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      if (ctxRef.current) ctxRef.current.close()
+    }
+  }, [])
 
   return (
     <div className={"vp-wrapper" + (playing ? "" : " vp-paused")} ref={wrapperRef}>
